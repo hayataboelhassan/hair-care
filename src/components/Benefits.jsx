@@ -46,7 +46,7 @@ function Benefits() {
         {/* الصورة */}
         <div className="flex justify-center md:pl-10 lg:pl-20">
           <img
-            src="src/assets/IMG_0907-removebg-preview.png"
+            src="/media/IMG_0907.jpeg"
             alt="princesse oil"
             className="w-80 md:w-[380px] rounded-2xl shadow-lg shadow-[#f8dcaf]"
           />

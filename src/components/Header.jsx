@@ -1,3 +1,5 @@
+// import vedioheader from'../assets/WhatsApp_Video_2025-11-01.mp4';
+// import logo from'../assets/WhatsApp_Image_2025-10-31.jpg'
 function Header() {
   return (
     <>
@@ -9,7 +11,7 @@ function Header() {
         <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
           {/* شعار */}
           <img
-            src="src/assets/WhatsApp Image 2025-10-31 at 18.53.49_dce6ea51.jpg"
+            src='/media/WhatsApp_Image_2025-10-31.jpg.jpg'
             alt="Princesse Logo"
             className="h-12 md:h-16 object-contain rounded-2xl border-2 border-white"
           />
@@ -41,7 +43,7 @@ function Header() {
         {/* الفيديو الخلفي */}
         <video
           className="absolute inset-0 w-full h-full object-cover"
-          src="src/assets/WhatsApp Video 2025-11-01 at 1.06.58 AM.mp4"
+          src='/media/WhatsApp_Video_2025-11-01.mp4.mp4'
           autoPlay
           loop
           muted
