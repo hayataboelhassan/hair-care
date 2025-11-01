@@ -9,78 +9,94 @@ function Order() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // لو فاضيين
     if (!name || !phone) {
       setMessage("⚠️ من فضلك املأ البيانات المطلوبة");
       return;
     }
 
-    // رقم صاحب المنتج
-    const ownerPhone = "201126134052"; // بدون +
+    const ownerPhone = "201126134052";
 
-    // كتابة الرسالة اللي هتروح للواتساب
     const text = `طلب جديد من الموقع:
 - الاسم: ${name}
 - البريد: ${email}
 - رقم العميل: ${phone}`;
 
-    // تشفير الرسالة
     const encodedText = encodeURIComponent(text);
-
-    // رابط واتساب
     const whatsappUrl = `https://wa.me/${ownerPhone}?text=${encodedText}`;
-
-    // فتح الواتساب
     window.open(whatsappUrl, "_blank");
 
     setMessage("✅ تم إرسال الطلب الى واتساب!");
   };
 
   return (
-    <section dir="rtl" className="p-10 bg-white" id="order">
-      <div className="w-full flex flex-col items-center justify-center border-2 border-[rgb(163,3,165)] p-10 rounded-xl text-center">
-        
-        <h2 className="text-[rgb(13,19,79)] text-4xl mb-2">عرض خاص! 🚨</h2>
-        <p className="text-[rgb(13,19,79)] text-2xl mb-5">اطلب المنتج قبل نفاد العرض!</p>
+    <section
+      dir="rtl"
+      className="p-10 bg-white text-[rgb(13,19,79)] flex flex-col md:flex-row items-center justify-center gap-10"
+      id="order"
+    >
+      {/* النص */}
+      <div className="md:w-1/2 text-center md:text-right mb-20">
+  <h2 className="text-4xl font-bold mb-8 text-[rgb(163,3,165)]">
+    لا تفوّتي العرض الحصري اليوم! 💖
+  </h2>
+  <p className="text-2xl mb-5">
+    احصلي على شعر ناعم، لامع، وخالٍ من التقصف مع <span className="text-[rgb(163,3,165)] font-semibold">Princess Oil</span> ✨
+  </p>
+  <p className="text-lg text-gray-700 leading-relaxed">
+    سجّلي بياناتك الآن لتستفيدي من <span className="font-bold text-[rgb(163,3,165)]">خصم خاص لفترة محدودة</span> 
+    وتوصيل سريع حتى باب البيت 🚚  
+    لا تنتظري حتى ينتهي العرض – الجمال لا ينتظر! 💅
+  </p>
+</div>
 
-        <form onSubmit={handleSubmit} className="flex flex-col gap-4 w-full max-w-md">
-          <div className="flex gap-4">
+      {/* الفورم */}
+      <div className="md:w-1/2 w-full border-2 border-[rgb(163,3,165)] p-10 rounded-xl shadow-[0_10px_25px_rgba(242,105,244,0.5)] ">
+        <form onSubmit={handleSubmit} className="flex flex-col gap-5 w-full">
+          {/* الاسم */}
+          <div className="flex flex-col text-right">
+            <label className="mb-1 font-semibold">الاسم *</label>
             <input
               type="text"
-              placeholder="الاسم"
               value={name}
               onChange={(e) => setName(e.target.value)}
               required
-              className="flex-1 p-3 rounded-md border border-gray-300 text-[rgb(13,19,79)]"
-            />
-            <input
-              type="email"
-              placeholder="البريد الإلكتروني"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="flex-1 p-3 rounded-md border border-gray-300 text-[rgb(13,19,79)]"
+              className="p-3 rounded-md border border-gray-300 text-[rgb(13,19,79)] focus:outline-none focus:border-[rgb(163,3,165)]"
             />
           </div>
 
-          <input
-            type="tel"
-            placeholder="رقم التليفون"
-            value={phone}
-            onChange={(e) => setPhone(e.target.value)}
-            required
-            className="w-full p-3 rounded-md border border-gray-300 text-[rgb(13,19,79)]"
-          />
+          {/* البريد الإلكتروني */}
+          <div className="flex flex-col text-right">
+            <label className="mb-1 font-semibold">البريد الإلكتروني *</label>
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="p-3 rounded-md border border-gray-300 text-[rgb(13,19,79)] focus:outline-none focus:border-[rgb(163,3,165)]"
+            />
+          </div>
+
+          {/* رقم التليفون */}
+          <div className="flex flex-col text-right">
+            <label className="mb-1 font-semibold">رقم التليفون *</label>
+            <input
+              type="tel"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+              required
+              className="p-3 rounded-md border border-gray-300 text-[rgb(13,19,79)] focus:outline-none focus:border-[rgb(163,3,165)]"
+            />
+          </div>
 
           <button
             type="submit"
-            className="w-full p-3 bg-[rgb(13,19,79)] text-white rounded-md transition-colors"
+            className="w-full p-3 bg-[rgb(13,19,79)] text-white rounded-md hover:bg-[rgb(163,3,165)] transition-colors"
           >
             اطلب الآن
           </button>
         </form>
 
         {message && (
-          <p className="text-green-500 font-bold mt-4">{message}</p>
+          <p className="text-green-500 font-bold mt-4 text-center">{message}</p>
         )}
       </div>
     </section>
@@ -88,3 +104,4 @@ function Order() {
 }
 
 export default Order;
+ 
