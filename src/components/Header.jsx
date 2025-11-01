@@ -1,44 +1,80 @@
 function Header() {
   return (
     <>
+      {/* Navbar */}
+      <nav
+        className="fixed top-0 left-0 w-full shadow-md z-50"
+        style={{ backgroundColor: "white" }}
+      >
+        <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+          {/* شعار */}
+          <img
+            src="src/assets/WhatsApp Image 2025-10-31 at 18.53.49_dce6ea51.jpg"
+            alt="Princesse Logo"
+            className="h-12 md:h-16 object-contain rounded-2xl border-2 border-white"
+          />
+
+          {/* روابط Navbar */}
+          <div className="hidden md:flex space-x-6 text-[rgb(13,19,79)] font-semibold">
+            <a href="#footer" className="hover:underline">
+              تواصل معنا
+            </a>
+            
+             <a href="#benefits" className="hover:underline">
+              فوائد المنتج
+            </a>
+             <a href="#order" className="hover:underline">
+              اطلب المنتج
+            </a>
+          </div>
+        </div>
+      </nav>
+
+      {/* Spacer عشان Navbar ثابت */}
+      <div className="h-20"></div>
+
+      {/* الهيرو سيكشن */}
       <header
-        className="relative flex items-center justify-center text-white py-32 px-8 bg-cover bg-center"
+        className="relative flex flex-col items-center justify-center py-28 px-8 "
         dir="rtl"
       >
+        {/* الفيديو الخلفي */}
         <video
-    className="absolute inset-0 w-full h-full object-cover"
-    src="src/assets/istockphoto-1333891922-640_adpp_is.mp4"
-    autoPlay
-    loop
-    muted
-    playsInline
-  ></video>
-        {/* الـ Overlay */}
-        <div className="absolute inset-0 bg-[rgba(32,56,34,0.8)]"></div>
+          className="absolute inset-0 w-full h-full object-cover"
+          src="src/assets/WhatsApp Video 2025-11-01 at 1.06.58 AM.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+        />
 
-        {/* النص */}
-        <div className="relative z-10 max-w-2xl text-center">
-          <h1 className="text-5xl font-extrabold mb-4 tracking-wide drop-shadow-lg">
-            استعيدي جمال شعرك الطبيعي ✨
+        {/* Overlay وردي فاتح شفاف */}
+        <div className="absolute inset-0" style={{ backgroundColor: "rgba(242,105,244,0.6)" }}></div>
+
+        {/* النص والزر */}
+        <div className="relative z-10 max-w-3xl flex flex-col items-center text-center text-white">
+          {/* الجملة الأولى لوحدها */}
+          <h1 className="text-2xl md:text-6xl font-bold leading-snug drop-shadow-md mb-10">
+            استعيدي لمعان شعرك الطبيعي من أول استخدام ✨
           </h1>
 
-          <p className="text-lg md:text-xl font-medium leading-relaxed drop-shadow-md mb-4">
-            عيشي تجربة فريدة مع منتج العناية بالشعر الطبيعي 🌿  
-            يعيد لشعرك الحيوية واللمعان من الجذور حتى الأطراف،  
-            يغذّي البصيلات بعمق ويمنحك مظهرًا صحيًا وقويًا في كل استخدام.
-          </p>
+          {/* باقي النص */}
+         <p className="text-lg md:text-xl font-medium drop-shadow-md mb-3 ">
+  دلّلي شعرك بخلاصة الزيوت الطبيعية التي تمنحه الحيوية، القوة، واللمعان الفائق.  
+  {" "}</p>
+  <p className="mb-10 text-lg md:text-xl font-medium drop-shadow-md">
+  <span className="font-extrabold text-[#dba247] text-3xl drop-shadow-lg">
+    مع زيت Princesse
+  </span>
+  {" "}
+  جمال شعرك يبدأ من الجذور! 💫
+</p>
 
-          <p className="text-lg md:text-xl font-medium leading-relaxed drop-shadow-md">
-            لأن جمالك يبدأ من شعرك… ابدئي رحلتك نحو التغيير الآن مع زيت{" "}
-            <span className="font-extrabold text-[#d7b072] drop-shadow-lg">
-              princesse
-            </span>
-            💫
-          </p>
-
-          <button className="mt-6 bg-[rgba(99,47,10)] text-white font-semibold py-3 px-8 rounded-full hover:bg-[#6b442b] transition">
-            اطلب الآن
-          </button>
+          {/* الزر */}
+         <a href="#order"
+          className="bg-white text-[rgb(13,19,79)] font-semibold py-3 px-8 rounded-full hover:bg-[rgb(13,19,79)] hover:text-white transition">
+  اطلبي الآن واستمتعي بعرض محدود!
+</a>
         </div>
       </header>
     </>
